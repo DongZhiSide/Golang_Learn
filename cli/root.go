@@ -6,36 +6,34 @@ import (
 	"github.com/spf13/cobra"
 )
 
-type _RootCmd struct {
-	cmd *cobra.Command
+type RootCmdFlags struct {
+	Ip string
 }
 
-var (
-	roocmd _RootCmd
-)
+type RootCmd struct {
+	Cmd   *cobra.Command
+	Flags RootCmdFlags
+}
 
-func (rootCmd *_RootCmd) configCmd() {
-	rootCmd.cmd = &cobra.Command{
-		Use:   `try`,
-		Short: `just try`,
-		Long:  `just try cobra.`,
-		Run:   getRunControl("192.168.1.1"),
+func NewRootCmd() *RootCmd {
+	rootCmd := &RootCmd{}
+
+	rootCmd.Cmd = &cobra.Command{
+		Use:   "appName",
+		Short: "A brief description of your application",
+		Long: `A longer description that spans multiple lines and likely contains
+examples and usage of using your application. For example:
+
+Cobra is a CLI library for Go that empowers applications.
+This application is a tool to generate the needed files`,
+		Run: func(cmd *cobra.Command, args []string) {
+			// cmd 就是 rootCmd.cmd, args 是位置参数
+			// Do Stuff Here
+			fmt.Println("ip is ", rootCmd.Flags.Ip)
+		},
 	}
 
-	ip := rootCmd.cmd.Flags().String("ip", "127.0.0.1", "input ip")
-	fmt.Println("--ip:", *ip)
-}
+	rootCmd.Cmd.PersistentFlags().StringVarP(&rootCmd.Flags.Ip, "ip", "i", "127.0.0.1", "ip address")
 
-func init() {
-	roocmd.configCmd()
-}
-
-func Execute() {
-	roocmd.cmd.Execute()
-}
-
-func getRunControl(ip string) func(cmd *cobra.Command, args []string) {
-	return func(cmd *cobra.Command, args []string) {
-		fmt.Println("ip:", ip)
-	}
+	return rootCmd
 }

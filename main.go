@@ -5,5 +5,9 @@ import (
 )
 
 func main() {
-	cli.Execute()
+	rc := cli.NewRootCmd()
+	err := rc.Cmd.Execute()
+	if err != nil {
+		// Do Stuff Here
+	}
 }
