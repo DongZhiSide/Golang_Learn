@@ -4,6 +4,7 @@ import (
 	"context"
 	"golanglearn/logb"
 	"log/slog"
+	"os"
 )
 
 type Account struct {
@@ -24,8 +25,8 @@ func (a Account) String() string {
 
 func main() {
 	lgb := logb.LoggerBuilder{}
-	lgb.Options.Level = slog.LevelDebug
-	lgb.Options.AddSource = true
+	lgb.Level = slog.LevelDebug
+	lgb.AddSource = true
 
 	a := Account{
 		Username: "google",
@@ -37,13 +38,20 @@ func main() {
 	glg := lg.WithGroup("google-accounts")
 	glg.LogAttrs(context.Background(), slog.LevelDebug, "create", slog.Any("account", a))
 
-	flg, close := lgb.BuildTextFile("1.log")
-	defer close()
+	file, err := logb.OpenLog("1.log")
+	flg := lgb.BuildTextWriter()
+	if file != os.Stdout {
+		defer file.Close()
+	}
+	if err != nil {
+		flg.Warn("failed to open logger output file", "error", err)
+	}
+
 	flg.LogAttrs(context.Background(), slog.LevelDebug, "create", slog.Any("account", a))
 
-	lgb.Options.Level = slog.LevelDebug - 8
-	lgb.Options.ReplaceAttr = logb.ReplaceTime
-	lgb.Options.AddSource = false
+	lgb.Level = slog.LevelDebug - 8
+	lgb.ReplaceAttr = logb.ReplaceTime
+	lgb.AddSource = false
 	ntlg := lgb.BuildTextStdout()
 	ntlg.LogAttrs(context.Background(), slog.LevelDebug-4, "create account", slog.Any("account", a))
 	ntlg.LogAttrs(context.Background(), slog.LevelDebug-3, "create account", slog.Any("account", a))

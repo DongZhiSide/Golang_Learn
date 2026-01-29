@@ -1,27 +1,34 @@
 package logb
 
 import (
+	"fmt"
 	"io"
 	"log/slog"
 	"os"
 )
 
 type LoggerBuilder struct {
-	Options slog.HandlerOptions
+	slog.HandlerOptions
+	W io.Writer
 }
 
-func (lb *LoggerBuilder) BuildTextStdout() *slog.Logger {
-	return lb.BuildText(os.Stdout)
+func (lb LoggerBuilder) BuildTextStdout() *slog.Logger {
+	opts := lb.HandlerOptions
+	return slog.New(slog.NewTextHandler(os.Stdout, &opts))
+}
+func (lb LoggerBuilder) BuildJsonStdout() *slog.Logger {
+	opts := lb.HandlerOptions
+	return slog.New(slog.NewJSONHandler(os.Stdout, &opts))
 }
 
-func (lb *LoggerBuilder) BuildText(w io.Writer) *slog.Logger {
-	opts := lb.Options
-	return slog.New(slog.NewTextHandler(w, &opts))
+func (lb LoggerBuilder) BuildTextWriter() *slog.Logger {
+	opts := lb.HandlerOptions
+	return slog.New(slog.NewTextHandler(lb.W, &opts))
 }
 
-func (lb *LoggerBuilder) BuildJson(w io.Writer) *slog.Logger {
-	opts := lb.Options
-	return slog.New(slog.NewJSONHandler(w, &opts))
+func (lb LoggerBuilder) BuildJsonWriter() *slog.Logger {
+	opts := lb.HandlerOptions
+	return slog.New(slog.NewJSONHandler(lb.W, &opts))
 }
 
 type Close = func() error
@@ -36,32 +43,6 @@ func getCloser(w *os.File) Close {
 	}
 }
 
-func (lb *LoggerBuilder) BuildTextFile(path string) (*slog.Logger, Close) {
-	w, err := OpenLog(path)
-	lg := lb.BuildText(w)
-	if err != nil {
-		lg.Warn("failed to open logger output file, defaulting to stdout", "error", err)
-	}
-	return lg, getCloser(w)
-}
-
-func (lb *LoggerBuilder) BuildJsonFile(path string) (*slog.Logger, Close) {
-	w, err := OpenLog(path)
-	lg := lb.BuildJson(w)
-	if err != nil {
-		lg.Warn("failed to open logger output file, defaulting to stdout", "error", err)
-	}
-	return lg, getCloser(w)
-}
-
-// if path is empty or can not open path,
-// the ouput will be os.Stdout.
-func BuildTextFile(level slog.Level, path string) (*slog.Logger, Close) {
-	lb := LoggerBuilder{}
-	lb.Options.Level = level
-	return lb.BuildTextFile(path)
-}
-
 // if path is empty, the *os.File will be os.Stdout,
 // and error will be nil.
 func OpenLog(path string) (*os.File, error) {
@@ -71,6 +52,7 @@ func OpenLog(path string) (*os.File, error) {
 	w, err := os.OpenFile(path, os.O_RDWR|os.O_CREATE|os.O_TRUNC, 0700)
 	if err != nil {
 		w = os.Stdout
+		err = fmt.Errorf("failed to open logger output file, defaulting to stdout: error: %w", err)
 	}
 	return w, err
 }
