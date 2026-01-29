@@ -31,18 +31,6 @@ func (lb LoggerBuilder) BuildJsonWriter() *slog.Logger {
 	return slog.New(slog.NewJSONHandler(lb.W, &opts))
 }
 
-type Close = func() error
-
-func getCloser(w *os.File) Close {
-	return func() error {
-		err := error(nil)
-		if w != nil && w != os.Stdout {
-			err = w.Close()
-		}
-		return err
-	}
-}
-
 // if path is empty, the *os.File will be os.Stdout,
 // and error will be nil.
 func OpenLog(path string) (*os.File, error) {
