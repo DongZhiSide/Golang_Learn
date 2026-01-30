@@ -57,26 +57,12 @@ func sender(ctx context.Context, rev []chan *string, urls []string, done func())
 }
 
 func rever(r <-chan *string, done func()) {
-	isbreak := false
-	for !isbreak {
-		url, open := <-r
-		if url != nil {
-			rever_handle(*url)
+	defer done()
+	for p := range r {
+		if p != nil {
+			rever_handle(*p)
 		}
-		if open {
-			if url == nil {
-				fmt.Println("!!!!!!!!!!!!!!!!!!")
-			}
-			continue
-		} else {
-			chanlen := len(r)
-			for range chanlen {
-				rever_handle(*(<-r))
-			}
-		}
-		isbreak = true
 	}
-	done()
 	fmt.Println("rever done")
 }
 
