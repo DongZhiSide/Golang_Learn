@@ -1,0 +1,14 @@
+[general]
+    ipv4="127.0.0.1"
+    port=12345
+    enable-tls=true
+    crt-path="./a.crt"
+    private-key-path="./a.key"
+[log]
+    level="trace"
+[http]
+    root="/"
+    hostname="tiny.mydns.com"
+    cookie-secure=true
+    cookie-httpOnly=true
+    cookie-domain="mydns.com"
