@@ -1,0 +1,31 @@
+{
+    "main": {
+        "prefix": "main",
+        "body": [
+            "package main",
+            "",
+            "func main() {",
+            "",
+            "}",
+            ""
+        ],
+        "description": "func main"
+    },
+    "err": {
+        "prefix": "err",
+        "body": [
+            "if err != nil{",
+            "",
+            "}"
+        ],
+        "description": "if err != nil"
+    },
+    "test": {
+        "prefix": "test",
+        "body": [
+            "func TestXxx(t *testing.T) {",
+            "}"
+        ],
+        "description": ""
+    }
+}
