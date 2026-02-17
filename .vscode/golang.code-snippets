@@ -1,8 +1,8 @@
 {
     "init slog": {
-        "prefix": "is",
+        "prefix": "il",
         "body": [
-            "func init() {",
+            "func initLogger() {",
             "   opts := &slog.HandlerOptions{",
             "       AddSource: true,",
             "       ReplaceAttr: func(groups []string, a slog.Attr) slog.Attr {",
