@@ -6,6 +6,10 @@ golang 学习仓库，会记录各种 golang 第三方模块的学习代码。
 
 也可以参考 [Go 每日一库](https://github.com/darjun/go-daily-lib)。
 
+## 开发思路
+
+1. [用 Golang 写 HTTP 服务的一些"术".](https://zhuanlan.zhihu.com/p/1967176103954199506)
+
 ## 分类
 
 代码生成类:
