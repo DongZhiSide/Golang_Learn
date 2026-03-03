@@ -1,5 +1,7 @@
-# Golang_Learn
+# cron
 
-golang 学习仓库，会记录各种 golang 第三方模块的学习代码。
+[cron](https://github.com/robfig/cron): cron 是一个用于 Go 语言的定时任务库, 可以方便地执行定时任务. 它支持多种时间格式, 包括分, 小时, 日, 月, 周几等, 并且可以指定任务执行的频率和间隔时间.
 
-仓库的各个分支名即为 golang 第三方模块名或者是官方模块名。
+## cron 的参考资料
+
+1. [cron go doc.](https://pkg.go.dev/github.com/robfig/cron/v3@v3.0.1)
