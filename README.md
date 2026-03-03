@@ -1,5 +1,14 @@
-# Golang_Learn
+# testify
 
-golang 学习仓库，会记录各种 golang 第三方模块的学习代码。
+[testify](https://github.com/stretchr/testify) 模块提供了一套完整的测试框架, 包括断言, mock, suite 等功能, 适用于单元测试与集成测试. 例如不用手动再判断是否`nil`了.
 
-仓库的各个分支名即为 golang 第三方模块名或者是官方模块名。
+Testify 包含以下包:
+
+- `github.com/stretchr/testify/assert`包提供了一套全面的断言函数, 与 Go 测试系统相关联.
+- `github.com/stretchr/testify/require`提供了相同的断言, 但作为致命的检查.
+- `github.com/stretchr/testify/mock`包提供了一个系统, 可以模拟你的对象并验证调用是否按预期进行.
+- `github.com/stretchr/testify/suite`包提供了一个基本结构, 用于将结构体用作测试套件, 并将这些结构体上的方法作为测试. 它包含了接口上的设置/拆卸功能.
+
+## testify 的参考资料
+
+1. [testify go doc.](https://pkg.go.dev/github.com/stretchr/testify)
