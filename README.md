@@ -1,5 +1,7 @@
-# Golang_Learn
+# gocsv
 
-golang 学习仓库，会记录各种 golang 第三方模块的学习代码。
+[gocsv](https://github.com/gocarina/gocsv) 模块旨在提供在 Golang 中使用 CSV 的便捷序列化和反序列化功能.
 
-仓库的各个分支名即为 golang 第三方模块名或者是官方模块名。
+## gocsv 的参考资料
+
+1. [gocsv go doc.](https://pkg.go.dev/github.com/gocarina/gocsv)
