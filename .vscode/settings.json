@@ -98,7 +98,8 @@
         "**/.git": false
     },
     "files.associations": {
-        "*.json": "jsonc"
+        "*.json": "jsonc",
+        "*.toml": "ini"
     },
     // extensions
     "extensions.ignoreRecommendations": false,

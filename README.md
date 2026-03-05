@@ -1,67 +1,10 @@
-# Golang_Learn
+# air
 
-golang 学习仓库，会记录各种 golang 第三方模块的学习代码。
+[Air](https://github.com/air-verse/air) 是为 Go 应用开发设计的另外一个热重载的命令行工具.只需在你的项目根目录下输入 air, 然后把它放在一边, 专注于你的代码即可.
 
-仓库的各个分支名即为 golang 第三方模块名或者是官方模块名。
+注意: 该工具与生产环境的热部署无关.
 
-也可以参考 [Go 每日一库](https://github.com/darjun/go-daily-lib)。
+## air 的参考资料
 
-## 开发思路
-
-1. [用 Golang 写 HTTP 服务的一些"术".](https://zhuanlan.zhihu.com/p/1967176103954199506)
-
-## 分类
-
-代码生成类:
-
-- `github.com/google/wire`
-- `github.com/swaggo/swag`
-
-数据库操作类:
-
-- `github.com/go-gorm/gorm`
-- `gitea.com/xorm/xorm`
-
-命令行框架类:
-
-- `github.com/spf13/cobra`
-
-文件处理类:
-
-- `github.com/spf13/viper`
-- `github.com/gocarina/gocsv`
-- `github.com/xuri/excelize`
-
-日志类:
-
-- `github.com/uber-go/zap`
-- `github.com/rs/zerolog`
-
-测试类:
-
-- `github.com/stretchr/testify`
-
-错误处理类:
-
-- `github.com/samber/oops`
-
-参数验证类:
-
-- `github.com/go-playground/validator`
-
-算法类:
-
-- `github.com/bwmarrin/snowflake`
-
-身份验证类:
-
-- `github.com/golang-jwt/jwt`
-- `github.com/pquerna/otp`
-
-http 服务器类:
-
-- `github.com/gin-gonic/gin`
-
-计时器类:
-
-- `github.com/robfig/cron`
+1. [air gitHub.](https://github.com/air-verse/air/blob/master/README-zh_cn.md)
+2. [Go 每日一库之 air.](https://darjun.github.io/2020/09/27/godailylib/air/)
