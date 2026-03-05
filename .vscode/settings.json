@@ -122,10 +122,28 @@
     "markdown.validate.enabled": false,
     // hediet
     "hediet.vscode-drawio.appearance": "dark",
-    "hediet.vscode-drawio.resizeImages": null
+    "hediet.vscode-drawio.resizeImages": null,
     // extensions settings here =========================
     //
     //
     // update here =========================
+    // [language]
+    "[go]": {
+        // editor
+        "editor.insertSpaces": false,
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+        },
+        "editor.wordWrap": "off"
+    },
+    // extensions settings here =========================
+    // go
+    "go.useLanguageServer": true,
+    "go.toolsManagement.checkForUpdates": "local",
+    "go.testFlags": [
+        "-count=1"
+    ]
+    // extensions settings here =========================
     // update here =========================
 }
