@@ -7,6 +7,7 @@
         "vscode-icons-team.vscode-icons",
         "alefragnani.Bookmarks",
         "hediet.vscode-drawio",
-        "CodeInChinese.EnglishChineseDictionary"
+        "CodeInChinese.EnglishChineseDictionary",
+        "redjue.git-commit-plugin"
     ]
 }
