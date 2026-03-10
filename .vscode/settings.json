@@ -1,3 +1,156 @@
 {
-    "git.enabled": true
+    // ========================= general =========================
+    // git
+    "git.showProgress": true,
+    // scm git 仓库管理界面
+    "scm.repositories.explorer": true,
+    "scm.repositories.selectionMode": "single",
+    // editor 编辑页面
+    "editor.tabSize": 4,
+    "editor.detectIndentation": false,
+    "editor.minimap.autohide": "mouseover",
+    "editor.minimap.scale": 1,
+    "editor.minimap.size": "proportional",
+    "editor.minimap.sectionHeaderLetterSpacing": 1,
+    "editor.minimap.enabled": true,
+    "editor.wordWrap": "on",
+    "editor.fontSize": 16,
+    "editor.cursorBlinking": "smooth",
+    "editor.cursorStyle": "line-thin",
+    "editor.quickSuggestionsDelay": 1000,
+    "editor.tabCompletion": "on",
+    "editor.unicodeHighlight.nonBasicASCII": false,
+    "editor.multiCursorLimit": 100000,
+    "editor.largeFileOptimizations": false,
+    "editor.minimap.showSlider": "mouseover",
+    // explorer 左侧的资源管理器
+    "explorer.compactFolders": false,
+    // [language] 语言重载配置
+    "[jsonc]": {
+        // editor
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+        // editor
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[html]": {
+        // editor
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[markdown]": {
+        // editor
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[yaml]": {
+        // editor
+        "editor.tabSize": 4,
+        "editor.insertSpaces": true,
+        "editor.autoIndent": "advanced",
+        "editor.defaultColorDecorators": "never",
+        "editor.quickSuggestions": {
+            "strings": "on"
+        },
+        // diffEditor
+        "diffEditor.ignoreTrimWhitespace": false
+    },
+    "[css]": {
+        // editor
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[snippets]": {
+        // editor
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    // html
+    "html.format.indentInnerHtml": true,
+    // json
+    "json.schemaDownload.enable": false,
+    // terminal 终端
+    "terminal.integrated.hideOnStartup": "whenEmpty",
+    "terminal.integrated.enableVisualBell": true,
+    "terminal.integrated.mouseWheelZoom": true,
+    "terminal.integrated.cursorBlinking": true,
+    "terminal.integrated.suggest.enabled": true,
+    "terminal.integrated.suggest.quickSuggestions": {
+        "commands": "on",
+        "arguments": "on",
+        "unknown": "off"
+    },
+    "terminal.integrated.smoothScrolling": true,
+    "terminal.integrated.defaultProfile.windows": "PowerShell",
+    "terminal.integrated.defaultProfile.linux": "zsh",
+    "terminal.integrated.gpuAcceleration": "on",
+    "terminal.integrated.suggest.showStatusBar": true,
+    // workbench vscode 整体的配置
+    "workbench.panel.showLabels": false,
+    "workbench.colorTheme": "GitHub Dark Dimmed",
+    "workbench.list.horizontalScrolling": true,
+    "workbench.editor.scrollToSwitchTabs": false,
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.view.alwaysShowHeaderActions": true,
+    "workbench.editor.openSideBySideDirection": "down",
+    "workbench.tree.indent": 12,
+    "workbench.tree.renderIndentGuides": "always",
+    "workbench.colorCustomizations": {
+        "tree.indentGuidesStroke": "#9261bc"
+    },
+    // debug
+    "debug.toolBarLocation": "docked",
+    "debug.onTaskErrors": "abort",
+    // files
+    "files.exclude": {
+        "**/.git": false
+    },
+    "files.associations": {
+        "*.json": "jsonc",
+        "*.toml": "ini"
+    },
+    // extensions
+    "extensions.ignoreRecommendations": false,
+    // window
+    "window.commandCenter": true,
+    "window.menuBarVisibility": "classic",
+    // accessibility
+    "accessibility.signals.terminalBell": {
+        "sound": "on"
+    },
+    //
+    //
+    // =================== extensions settings ===================
+    // prettier
+    "prettier.tabWidth": 2,
+    "prettier.embeddedLanguageFormatting": "off",
+    "prettier.useTabs": true,
+    // EnglishChineseDictionary
+    "EnglishChineseDictionary.enableHover": true,
+    // markdown
+    "markdown.validate.enabled": false,
+    // hediet
+    "hediet.vscode-drawio.appearance": "dark",
+    "hediet.vscode-drawio.resizeImages": null,
+    // =================== extensions settings ===================
+    //
+    //
+    // ========================= general =========================
+    // [language]
+    "[go]": {
+        // editor
+        "editor.insertSpaces": false,
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+        },
+        "editor.wordWrap": "off"
+    },
+    //
+    //
+    // extensions settings here =========================
+    // go
+    "go.useLanguageServer": true,
+    "go.toolsManagement.checkForUpdates": "local",
+    "go.testFlags": [
+        "-count=1"
+    ],
+    // extensions settings here =========================
 }

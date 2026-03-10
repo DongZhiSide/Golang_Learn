@@ -1,0 +1,29 @@
+{
+	// 扩展推荐
+	// string array
+	"recommendations": [
+		// 扩展推荐
+		"esbenp.prettier-vscode",
+		"github.github-vscode-theme",
+		"ms-ceintl.vscode-language-pack-zh-hans",
+		"vscode-icons-team.vscode-icons",
+		"alefragnani.Bookmarks",
+		"hediet.vscode-drawio",
+		"CodeInChinese.EnglishChineseDictionary",
+		"redjue.git-commit-plugin",
+		"yzhang.markdown-all-in-one",
+		"ms-vscode-remote.remote-ssh",
+		"ms-vscode-remote.remote-ssh-edit",
+		"ms-vscode.remote-explorer",
+		"ms-vscode-remote.remote-containers"
+	],
+	// 不推荐扩展
+	// string array
+	"unwantedRecommendations": [
+		"hediet.vscode-drawio",
+		"ms-vscode-remote.remote-ssh",
+		"ms-vscode-remote.remote-ssh-edit",
+		"ms-vscode.remote-explorer",
+		"ms-vscode-remote.remote-containers"
+	]
+}
