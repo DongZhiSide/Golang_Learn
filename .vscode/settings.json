@@ -143,7 +143,7 @@
     "go.toolsManagement.checkForUpdates": "local",
     "go.testFlags": [
         "-count=1"
-    ]
+    ],
     // extensions settings here =========================
     // update here =========================
 }

@@ -8,8 +8,7 @@
             "mode": "auto",
             "program": "${file}",
             "console": "integratedTerminal",
-            "args": [
-            ]
+            "args": [],
         }
     ]
 }

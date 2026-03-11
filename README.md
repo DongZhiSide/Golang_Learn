@@ -1,67 +1,14 @@
-# Golang_Learn
+# moby
 
-golang 学习仓库，会记录各种 golang 第三方模块的学习代码。
+[moby](https://github.com/moby/moby) 是 Docker 创建的一个开源项目，旨在支持和加速软件容器化。
 
-仓库的各个分支名即为 golang 第三方模块名或者是官方模块名。
+它提供了一套“乐高”工具包组件、将它们组装成基于容器的定制系统的框架，以及所有容器爱好者和专业人士进行实验和交流想法的场所。组件包括容器构建工具、容器注册表、编排工具、运行时等，这些可以用作与其他工具和项目结合使用的构建块。
 
-也可以参考 [Go 每日一库](https://github.com/darjun/go-daily-lib)。
+moby 源代码的 client 模块是 docker 的 sdk：docker 命令使用该包与守护进程通信。它也可以被你自己的 Go 应用用来完成命令行界面的功能，比如运行容器、拉取或推送图片等。
 
-## 开发思路
+其中 api 模块是用来定义命令行客户端与守护进程通信的 HTTP API。
 
-1. [用 Golang 写 HTTP 服务的一些"术".](https://zhuanlan.zhihu.com/p/1967176103954199506)
+## moby 的参考资料
 
-## 分类
-
-代码生成类:
-
-- `github.com/google/wire`
-- `github.com/swaggo/swag`
-
-数据库操作类:
-
-- `github.com/go-gorm/gorm`
-- `gitea.com/xorm/xorm`
-
-命令行框架类:
-
-- `github.com/spf13/cobra`
-
-文件处理类:
-
-- `github.com/spf13/viper`
-- `github.com/gocarina/gocsv`
-- `github.com/xuri/excelize`
-
-日志类:
-
-- `github.com/uber-go/zap`
-- `github.com/rs/zerolog`
-
-测试类:
-
-- `github.com/stretchr/testify`
-
-错误处理类:
-
-- `github.com/samber/oops`
-
-参数验证类:
-
-- `github.com/go-playground/validator`
-
-算法类:
-
-- `github.com/bwmarrin/snowflake`
-
-身份验证类:
-
-- `github.com/golang-jwt/jwt`
-- `github.com/pquerna/otp`
-
-http 服务器类:
-
-- `github.com/gin-gonic/gin`
-
-计时器类:
-
-- `github.com/robfig/cron`
+1. [Go 每日一库之121：moby（操作docker容器）](https://cloud.tencent.com/developer/article/2334511)
+2. [Go client for the Docker Engine API go doc](https://pkg.go.dev/github.com/moby/moby/client)
