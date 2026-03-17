@@ -27,7 +27,7 @@
     // [language] 语言重载配置
     "[jsonc]": {
         // editor
-        "editor.defaultFormatter": "vscode.json-language-features"
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[json]": {
         // editor
@@ -99,7 +99,7 @@
     },
     "files.associations": {
         "*.json": "jsonc",
-        "*.toml": "ini",
+        "*.toml": "ini"
     },
     // extensions
     "extensions.ignoreRecommendations": false,
@@ -113,9 +113,9 @@
     //
     // extensions settings here =========================
     // prettier
-    "prettier.tabWidth": 2,
+    "prettier.tabWidth": 4,
     "prettier.embeddedLanguageFormatting": "off",
-    "prettier.useTabs": true,
+    "prettier.useTabs": false,
     // EnglishChineseDictionary
     "EnglishChineseDictionary.enableHover": true,
     // markdown
@@ -141,12 +141,11 @@
     // go
     "go.useLanguageServer": true,
     "go.toolsManagement.checkForUpdates": "local",
-    "go.testFlags": [
-        "-count=1"
-    ],
+    "go.testFlags": ["-count=1"],
     "go.toolsEnvVars": {
         "GOSUMDB": "sum.golang.org"
-    }
+    },
+    "Codegeex.RepoIndex": true
     // extensions settings here =========================
     // update here =========================
 }
