@@ -24,3 +24,57 @@ Gin 的核心特性:
 ## gin 的参考资料
 
 1. [Gin 官方文档.](https://gin-gonic.com/zh-cn/docs/)
+
+## gin 编码结构参考
+
+参考自: [gin-vue-admin](https://github.com/flipped-aurora/gin-vue-admin).
+
+```shell
+.
+cmd         # 存放 main 函数
+config      # 存放配置文件映射成结构体的代码
+initialize  # 存放初始化代码, 如初始化路由等
+api         # 存放 gin 的控制器代码
+router      # 存放 gin 的路由注册代码
+service     # 存放业务逻辑代码
+model       # 存放数据库模型代码
+utils       # 存放业务无关代码
+```
+
+```go
+// 这是常见的 gin 控制器
+func Ctrl(ctx *gin.Context) {
+    ctx.JSON(http.StatusOK, gin.H{"message": "pong"})
+}
+
+// 有些写法写成了这样:
+// 这是为了让 gin 控制器具有参数配置功能
+func BuildCtrl() gin.HandlerFunc {
+    return func(ctx *gin.Context) {
+        ctx.JSON(http.StatusOK, gin.H{"message": "pong"})
+    }
+}
+
+// 例如: 在创建控制器时能根据传入参数来回复不同的内容
+// 当然也可以使用结构体来传递参数, 但这可能会污染结构体的"空间"
+func BuildCtrl(msg string) gin.HandlerFunc {
+    return func(ctx *gin.Context) {
+        ctx.JSON(http.StatusOK, gin.H{"message": msg})
+    }
+}
+router.GET("/ping", BuildCtrl("pong"))
+
+// go 没有命名空间, 对于不同模块但是类似的函数,
+// 可以把函数变成方法以避免冲突
+type api1 struct{}
+func (api1) Ping(ctx *gin.Context) {
+    ctx.JSON(http.StatusOK, gin.H{"message": "pong"})
+}
+
+type api2 struct{}
+func (api2) Ping(ctx *gin.Context) {
+    ctx.JSON(http.StatusOK, gin.H{"message": "pong"})
+}
+```
+
+最后, 目录结构与你写的系统架构有关, 没有绝对的对错, 只要合理即可.
