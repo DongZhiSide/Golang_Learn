@@ -5,8 +5,8 @@
 
 # Check if the project name is provided
 if [ -z "$1" ]; then
-  echo "Please provide a project name."
-  exit 1
+    echo "Please provide a project name."
+    exit 1
 fi
 
 # Create the project directory
@@ -15,4 +15,5 @@ mkdir "$1"
 # Create the main.go file
 cd "$1"
 touch "main.go"
+touch "README.md"
 go mod init "golanglearn/$1"
