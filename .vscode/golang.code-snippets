@@ -15,5 +15,13 @@
             "}"
         ],
         "description": "init slog"
+    },
+    "main":{
+        "prefix": "ma",
+        "body": [
+            "package main",
+            "func main() {",
+            "}",
+        ]
     }
 }
