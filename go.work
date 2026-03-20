@@ -5,6 +5,7 @@ use (
 	./cobra
 	./cron
 	./gin
+	./grpc
 	./moby
 	./paho.mqtt.golang
 	./validator
