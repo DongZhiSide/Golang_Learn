@@ -10,18 +10,193 @@
     "extensions": {
         // 扩展推荐
         // string array
-        "recommendations": [],
+        "recommendations": [
+            "ms-ceintl.vscode-language-pack-zh-hans",   // 中文
+            "esbenp.prettier-vscode",                   // 多种文档格式化
+            "github.github-vscode-theme",               // 主题
+            "vscode-icons-team.vscode-icons",           // 图标
+            "alefragnani.Bookmarks",                    // 书签
+            "hediet.vscode-drawio",                     // 画图
+            "CodeInChinese.EnglishChineseDictionary",   // 词典
+            "redjue.git-commit-plugin",                 // git 提交模板
+            "yzhang.markdown-all-in-one",               // markdown 支持
+            "golang.go",
+        ],
         // 不推荐扩展
         // string array
         "unwantedRecommendations": []
     },
     // 工作区设置
-    "settings": {},
+    "settings": {
+        // ======================== 文本编辑器 ========================
+        // -------------------- 缩略图 --------------------
+        "editor.minimap.autohide": "mouseover",
+        "editor.minimap.scale": 1,
+        "editor.minimap.size": "proportional",
+        "editor.minimap.sectionHeaderLetterSpacing": 1,
+        "editor.minimap.enabled": true,
+        "editor.minimap.showSlider": "mouseover",
+        // -------------------- 缩略图 --------------------
+        // --------------------- 光标 ---------------------
+        "editor.cursorBlinking": "smooth",
+        "editor.cursorStyle": "line-thin",
+        "editor.multiCursorLimit": 100000,
+        // --------------------- 光标 ---------------------
+        // --------------------- 字体 ---------------------
+        "editor.fontSize": 16,
+        // --------------------- 字体 ---------------------
+        // --------------------- 文件 ---------------------
+        "files.exclude": {
+            "**/.git": false
+        },
+        "files.associations": {
+            "*.json": "jsonc",
+            "*.toml": "ini"
+        },
+        // --------------------- 文件 ---------------------
+        // -------------------- 格式化 --------------------
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        // -------------------- 格式化 --------------------
+        // --------------------- 其他 ---------------------
+        "editor.tabSize": 4,
+        "editor.detectIndentation": false,
+        "editor.wordWrap": "on",
+        "editor.quickSuggestionsDelay": 1000,
+        "editor.tabCompletion": "on",
+        "editor.unicodeHighlight.nonBasicASCII": false,
+        "editor.largeFileOptimizations": false,
+        "editor.aiStats.enabled": true,
+        // --------------------- 其他 ---------------------
+        // ======================== 文本编辑器 ========================
+        //
+        //
+        // ======================== 资源管理器 ========================
+        "explorer.compactFolders": false,
+        // ======================== 资源管理器 ========================
+        //
+        //
+        // ========================== 工作台 ==========================
+        // --------------------- 外观 ---------------------
+        "workbench.colorTheme": "GitHub Dark Dimmed",
+        "workbench.iconTheme": "vscode-icons",
+        "workbench.colorCustomizations": {
+            "tree.indentGuidesStroke": "#9261bc"
+        },
+        "workbench.tree.indent": 12,
+        "workbench.tree.renderIndentGuides": "always",
+        "workbench.view.alwaysShowHeaderActions": true,
+        // --------------------- 外观 ---------------------
+        // ------------------- 编辑管理 -------------------
+        "workbench.editor.openSideBySideDirection": "down",
+        // ------------------- 编辑管理 -------------------
+        // --------------------- 其他 ---------------------
+        "workbench.panel.showLabels": false,
+        "workbench.list.horizontalScrolling": true,
+        "workbench.editor.scrollToSwitchTabs": false,
+        // --------------------- 其他 ---------------------
+        // ========================== 工作台 ==========================
+        //
+        //
+        // =========================== 窗口 ===========================
+        "window.commandCenter": true,
+        // =========================== 窗口 ===========================
+        //
+        //
+        // =========================== 功能 ===========================
+        // --------------------- 终端 ---------------------
+        "terminal.integrated.hideOnStartup": "whenEmpty",
+        "terminal.integrated.enableVisualBell": true,
+        "terminal.integrated.mouseWheelZoom": true,
+        "terminal.integrated.cursorBlinking": true,
+        "terminal.integrated.suggest.enabled": true,
+        "terminal.integrated.suggest.quickSuggestions": {
+            "commands": "on",
+            "arguments": "on",
+            "unknown": "off"
+        },
+        "terminal.integrated.smoothScrolling": true,
+        "terminal.integrated.defaultProfile.windows": "PowerShell",
+        "terminal.integrated.defaultProfile.linux": "zsh",
+        "terminal.integrated.gpuAcceleration": "on",
+        "terminal.integrated.suggest.showStatusBar": true,
+        // --------------------- 终端 ---------------------
+        // --------------------- 调试 ---------------------
+        "debug.toolBarLocation": "docked",
+        "debug.onTaskErrors": "abort",
+        // --------------------- 调试 ---------------------
+        // ------------------ 辅助功能信号 ------------------
+        "accessibility.signals.terminalBell": {
+            "sound": "on"
+        },
+        // ------------------ 辅助功能信号 ------------------
+        // =========================== 功能 ===========================
+        //
+        //
+        // ========================= 扩展设置 =========================
+        // --------------------- 其他 ---------------------
+        "extensions.ignoreRecommendations": false,
+        // --------------------- 其他 ---------------------
+        // --------------------- git ---------------------
+        "git.showProgress": true,
+        // --------------------- git ---------------------
+        // --------------------- json ---------------------
+        "json.schemaDownload.enable": false,
+        // --------------------- json ---------------------
+        // ------------------- prettier -------------------
+        "prettier.tabWidth": 2,
+        "prettier.embeddedLanguageFormatting": "off",
+        "prettier.useTabs": false,
+        // ------------------- prettier -------------------
+        // ----------- EnglishChineseDictionary -----------
+        // EnglishChineseDictionary
+        "EnglishChineseDictionary.enableHover": true,
+        // ----------- EnglishChineseDictionary -----------
+        // ------------------- markdown -------------------
+        "markdown.validate.enabled": false,
+        // ------------------- markdown -------------------
+        // -------------------- hediet --------------------
+        "hediet.vscode-drawio.appearance": "dark",
+        "hediet.vscode-drawio.resizeImages": null,
+        // -------------------- hediet --------------------
+        // ========================= 扩展设置 =========================
+        //
+        //
+        "[go]": {
+            "editor.insertSpaces": false,
+            "editor.formatOnSave": true,
+            "editor.codeActionsOnSave": {
+                "source.organizeImports": "explicit"
+            },
+            "editor.wordWrap": "off"
+        },
+        "go.useLanguageServer": true,
+        "go.toolsManagement.checkForUpdates": "local",
+        "go.testFlags": [
+            "-count=1"
+        ],
+        "go.toolsEnvVars": {
+            "GOSUMDB": "sum.golang.org"
+        }
+    },
     // 工作区调试设置
     "launch": {
         "version": "0.2.0",
         // object array
-        "configurations": [],
+        "configurations": [
+            {
+                "name": "Launch Package",
+                "type": "go",
+                "request": "launch",
+                "mode": "auto",
+                "program": "${file}",
+                "console": "integratedTerminal",
+                "args": [],
+                "asRoot": true,
+                "env": {
+                    "PATH": "/usr/local/go/bin:${env:PATH}"
+                }
+            },
+        ],
         // object array
         "compounds": [],
         "inputs": []
