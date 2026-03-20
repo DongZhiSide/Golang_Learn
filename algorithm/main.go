@@ -1,7 +1,7 @@
 package main
 
 import (
-	"golanglearn/syncmod"
+	"golanglearn/algorithm/syncmod"
 )
 
 func main() {
