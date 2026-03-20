@@ -16,11 +16,43 @@ golang 学习仓库，会记录各种 golang 第三方模块的学习代码。
 
 - `github.com/google/wire`
 - `github.com/swaggo/swag`
+- `github.com/air-verse/air`
+
+算法类:
+
+- `github.com/bwmarrin/snowflake`
+
+标准库类:
+
+- `standard/math/big`
+- `standard/encoding/json`
+- `standard/log/slog`
+- `standard/net`
+
+权限控制类:
+
+- `github.com/casbin/casbin`
+
+RPC 框架类:
+
+- `google.golang.org/grpc`
+
+容器操作类:
+
+- `github.com/moby/moby`
+
+消息队列类:
+
+- `github.com/eclipse/paho.mqtt.golang`
+
+缓存类:
+
+- `github.com/redis/go-redis`
 
 数据库操作类:
 
 - `github.com/go-gorm/gorm`
-- `gitea.com/xorm/xorm`
+- `xorm.io/xorm`
 
 命令行框架类:
 
@@ -49,16 +81,12 @@ golang 学习仓库，会记录各种 golang 第三方模块的学习代码。
 
 - `github.com/go-playground/validator`
 
-算法类:
-
-- `github.com/bwmarrin/snowflake`
-
 身份验证类:
 
 - `github.com/golang-jwt/jwt`
 - `github.com/pquerna/otp`
 
-http 服务器类:
+HTTP 服务器类:
 
 - `github.com/gin-gonic/gin`
 
