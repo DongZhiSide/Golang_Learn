@@ -138,7 +138,8 @@
         "editor.codeActionsOnSave": {
             "source.organizeImports": "explicit"
         },
-        "editor.wordWrap": "off"
+        "editor.wordWrap": "off",
+        "editor.defaultFormatter": "golang.go"
     },
     "go.useLanguageServer": true,
     "go.toolsManagement.checkForUpdates": "local",
