@@ -1,5 +1,6 @@
 {
     "version": "0.2.0",
+    // object
     "configurations": [
         {
             "name": "Launch Package",
@@ -8,8 +9,14 @@
             "mode": "auto",
             "program": "${file}",
             "console": "integratedTerminal",
-            "args": [
-            ]
-        }
-    ]
+            "args": [],
+            "asRoot": true,
+            "env": {
+                "PATH": "/usr/local/go/bin:${env:PATH}"
+            }
+        },
+    ],
+    // object
+    "compounds": [],
+    "inputs": []
 }

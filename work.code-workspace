@@ -1,0 +1,35 @@
+{
+    // 包含路径
+    "folders": [
+        {
+            "path": "",
+            "name": ""
+        }
+    ],
+    // 工作区扩展设置
+    "extensions": {
+        // 扩展推荐
+        // string array
+        "recommendations": [],
+        // 不推荐扩展
+        // string array
+        "unwantedRecommendations": []
+    },
+    // 工作区设置
+    "settings": {},
+    // 工作区调试设置
+    "launch": {
+        "version": "0.2.0",
+        // object array
+        "configurations": [],
+        // object array
+        "compounds": [],
+        "inputs": []
+    },
+    // 工作区任务设置
+    "tasks": {
+        "version": "2.0.0",
+        // object array
+        "tasks": []
+    }
+}

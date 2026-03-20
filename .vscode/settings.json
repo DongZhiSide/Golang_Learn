@@ -1,67 +1,80 @@
 {
-    // git
-    "git.showProgress": true,
-    // scm git 仓库管理界面
-    "scm.repositories.explorer": true,
-    "scm.repositories.selectionMode": "single",
-    // editor 编辑页面
-    "editor.tabSize": 4,
-    "editor.detectIndentation": false,
+    // ======================== 文本编辑器 ========================
+    // -------------------- 缩略图 --------------------
     "editor.minimap.autohide": "mouseover",
     "editor.minimap.scale": 1,
     "editor.minimap.size": "proportional",
     "editor.minimap.sectionHeaderLetterSpacing": 1,
     "editor.minimap.enabled": true,
-    "editor.wordWrap": "on",
-    "editor.fontSize": 16,
+    "editor.minimap.showSlider": "mouseover",
+    // -------------------- 缩略图 --------------------
+    // --------------------- 光标 ---------------------
     "editor.cursorBlinking": "smooth",
     "editor.cursorStyle": "line-thin",
+    "editor.multiCursorLimit": 100000,
+    // --------------------- 光标 ---------------------
+    // --------------------- 字体 ---------------------
+    "editor.fontSize": 16,
+    // --------------------- 字体 ---------------------
+    // --------------------- 文件 ---------------------
+    "files.exclude": {
+        "**/.git": false
+    },
+    "files.associations": {
+        "*.json": "jsonc",
+        "*.toml": "ini"
+    },
+    // --------------------- 文件 ---------------------
+    // -------------------- 格式化 --------------------
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    // -------------------- 格式化 --------------------
+    // --------------------- 其他 ---------------------
+    "editor.tabSize": 4,
+    "editor.detectIndentation": false,
+    "editor.wordWrap": "on",
     "editor.quickSuggestionsDelay": 1000,
     "editor.tabCompletion": "on",
     "editor.unicodeHighlight.nonBasicASCII": false,
-    "editor.multiCursorLimit": 100000,
     "editor.largeFileOptimizations": false,
-    "editor.minimap.showSlider": "mouseover",
-    // explorer 左侧的资源管理器
+    "editor.aiStats.enabled": true,
+    // --------------------- 其他 ---------------------
+    // ======================== 文本编辑器 ========================
+    //
+    //
+    // ======================== 资源管理器 ========================
     "explorer.compactFolders": false,
-    // [language] 语言重载配置
-    "[jsonc]": {
-        // editor
-        "editor.defaultFormatter": "vscode.json-language-features"
+    // ======================== 资源管理器 ========================
+    //
+    //
+    // ========================== 工作台 ==========================
+    // --------------------- 外观 ---------------------
+    "workbench.colorTheme": "GitHub Dark Dimmed",
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.colorCustomizations": {
+        "tree.indentGuidesStroke": "#9261bc"
     },
-    "[json]": {
-        // editor
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[html]": {
-        // editor
-        "editor.defaultFormatter": "vscode.html-language-features"
-    },
-    "[markdown]": {
-        // editor
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[yaml]": {
-        // editor
-        "editor.tabSize": 4,
-        "editor.insertSpaces": true,
-        "editor.autoIndent": "advanced",
-        "editor.defaultColorDecorators": "never",
-        "editor.quickSuggestions": {
-            "strings": "on"
-        },
-        // diffEditor
-        "diffEditor.ignoreTrimWhitespace": false
-    },
-    "[css]": {
-        // editor
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    // html
-    "html.format.indentInnerHtml": true,
-    // json
-    "json.schemaDownload.enable": false,
-    // terminal 终端
+    "workbench.tree.indent": 12,
+    "workbench.tree.renderIndentGuides": "always",
+    "workbench.view.alwaysShowHeaderActions": true,
+    // --------------------- 外观 ---------------------
+    // ------------------- 编辑管理 -------------------
+    "workbench.editor.openSideBySideDirection": "down",
+    // ------------------- 编辑管理 -------------------
+    // --------------------- 其他 ---------------------
+    "workbench.panel.showLabels": false,
+    "workbench.list.horizontalScrolling": true,
+    "workbench.editor.scrollToSwitchTabs": false,
+    // --------------------- 其他 ---------------------
+    // ========================== 工作台 ==========================
+    //
+    //
+    // =========================== 窗口 ===========================
+    "window.commandCenter": true,
+    // =========================== 窗口 ===========================
+    //
+    //
+    // =========================== 功能 ===========================
+    // --------------------- 终端 ---------------------
     "terminal.integrated.hideOnStartup": "whenEmpty",
     "terminal.integrated.enableVisualBell": true,
     "terminal.integrated.mouseWheelZoom": true,
@@ -77,59 +90,49 @@
     "terminal.integrated.defaultProfile.linux": "zsh",
     "terminal.integrated.gpuAcceleration": "on",
     "terminal.integrated.suggest.showStatusBar": true,
-    // workbench vscode 整体的配置
-    "workbench.panel.showLabels": false,
-    "workbench.colorTheme": "GitHub Dark Dimmed",
-    "workbench.list.horizontalScrolling": true,
-    "workbench.editor.scrollToSwitchTabs": false,
-    "workbench.iconTheme": "vscode-icons",
-    "workbench.view.alwaysShowHeaderActions": true,
-    "workbench.editor.openSideBySideDirection": "down",
-    "workbench.tree.indent": 12,
-    "workbench.tree.renderIndentGuides": "always",
-    "workbench.colorCustomizations": {
-        "tree.indentGuidesStroke": "#9261bc"
-    },
-    // debug
+    // --------------------- 终端 ---------------------
+    // --------------------- 调试 ---------------------
     "debug.toolBarLocation": "docked",
     "debug.onTaskErrors": "abort",
-    // files
-    "files.exclude": {
-        "**/.git": false
-    },
-    "files.associations": {
-        "*.json": "jsonc",
-        "*.toml": "ini",
-    },
-    // extensions
-    "extensions.ignoreRecommendations": false,
-    // window
-    "window.commandCenter": true,
-    // accessibility
+    // --------------------- 调试 ---------------------
+    // ------------------ 辅助功能信号 ------------------
     "accessibility.signals.terminalBell": {
         "sound": "on"
     },
+    // ------------------ 辅助功能信号 ------------------
+    // =========================== 功能 ===========================
     //
     //
-    // extensions settings here =========================
-    // prettier
+    // ========================= 扩展设置 =========================
+    // --------------------- 其他 ---------------------
+    "extensions.ignoreRecommendations": false,
+    // --------------------- 其他 ---------------------
+    // --------------------- git ---------------------
+    "git.showProgress": true,
+    // --------------------- git ---------------------
+    // --------------------- json ---------------------
+    "json.schemaDownload.enable": false,
+    // --------------------- json ---------------------
+    // ------------------- prettier -------------------
     "prettier.tabWidth": 2,
     "prettier.embeddedLanguageFormatting": "off",
-    "prettier.useTabs": true,
+    "prettier.useTabs": false,
+    // ------------------- prettier -------------------
+    // ----------- EnglishChineseDictionary -----------
     // EnglishChineseDictionary
     "EnglishChineseDictionary.enableHover": true,
-    // markdown
+    // ----------- EnglishChineseDictionary -----------
+    // ------------------- markdown -------------------
     "markdown.validate.enabled": false,
-    // hediet
+    // ------------------- markdown -------------------
+    // -------------------- hediet --------------------
     "hediet.vscode-drawio.appearance": "dark",
     "hediet.vscode-drawio.resizeImages": null,
-    // extensions settings here =========================
+    // -------------------- hediet --------------------
+    // ========================= 扩展设置 =========================
     //
     //
-    // update here =========================
-    // [language]
     "[go]": {
-        // editor
         "editor.insertSpaces": false,
         "editor.formatOnSave": true,
         "editor.codeActionsOnSave": {
@@ -137,8 +140,6 @@
         },
         "editor.wordWrap": "off"
     },
-    // extensions settings here =========================
-    // go
     "go.useLanguageServer": true,
     "go.toolsManagement.checkForUpdates": "local",
     "go.testFlags": [
@@ -147,6 +148,4 @@
     "go.toolsEnvVars": {
         "GOSUMDB": "sum.golang.org"
     }
-    // extensions settings here =========================
-    // update here =========================
 }
