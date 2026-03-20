@@ -7,4 +7,5 @@ use (
 	./gin
 	./moby
 	./paho.mqtt.golang
+	./validator
 )
