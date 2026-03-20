@@ -5,7 +5,7 @@ import (
 	"log/slog"
 	"net/http"
 
-	_ "golanglearn/docs"
+	_ "golanglearn/swag/docs"
 
 	httpSwagger "github.com/swaggo/http-swagger"
 )
