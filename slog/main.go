@@ -2,7 +2,7 @@ package main
 
 import (
 	"context"
-	"golanglearn/logb"
+	"golanglearn/slog/logb"
 	"log/slog"
 	"os"
 )
