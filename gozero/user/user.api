@@ -1,0 +1,90 @@
+syntax = "v1"
+
+type AddUserRequest {
+	Username string `json:"username"`
+	Password string `json:"password"`
+	Phone    string `json:"phone"`
+	Email    string `json:"email,optional"`
+}
+
+type AddUserResponse {
+	Message string `json:"message"`
+}
+
+type DeleteUserRequest {
+	Username string `json:"username" path:"username"`
+}
+
+type DeleteUserResponse {
+	Message string `json:"message"`
+}
+
+type GetUserRequest {
+	Username string `form:"username"`
+	Email    string `form:"email"`
+	Phone    string `form:"phone"`
+	Page     int    `form:"page"`
+	PerPage  int    `form:"per_page"`
+}
+
+type UserData {
+	Username string `json:"username"`
+	Password string `json:"password"`
+	Phone    string `json:"phone"`
+	Email    string `json:"email,optional"`
+}
+
+type GetUserResponse {
+	Message string     `json:"message"`
+	Page    int        `json:"page"`
+	PerPage int        `json:"per_page"`
+	Total   int        `json:"total"`
+	Data    []UserData `json:"data"`
+}
+
+type UpdateUserRequest {
+	Password string `json:"password"`
+	Phone    string `json:"phone"`
+	Email    string `json:"email,optional"`
+}
+
+type UpdateUserResponse {
+	Message string `json:"message"`
+}
+
+@server (
+	prefix: /api
+	jwt:    Auth
+)
+service user {
+	@handler AddUserHandler
+	post / (AddUserRequest) returns (AddUserResponse)
+
+	@handler DeleteUserHandler
+	delete /:username (DeleteUserRequest) returns (DeleteUserResponse)
+
+	@handler GetUserHandler
+	get / (GetUserRequest) returns (GetUserResponse)
+
+	@handler UpdateUserHandler
+	put /:username (UpdateUserRequest) returns (UpdateUserResponse)
+}
+
+type LoginRequest {
+	Username string `json:"username"`
+	Password string `json:"password"`
+}
+
+type LoginResponse {
+	Message string `json:"message"`
+	Token   string `json:"token"`
+}
+
+@server (
+	prefix: /api
+)
+service user {
+	@handler LoginHandler
+	post /login (LoginRequest) returns (LoginResponse)
+}
+
